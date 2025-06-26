@@ -65,7 +65,7 @@ export default function App() {
       <footer className="py-8 text-center text-sm text-gray-500">
         <p>Made with ❤️ by Vaiju Patil</p>
         <p>
-          <a href="https://github.com/yourusername/blankly" className="underline" target="_blank">GitHub Repo</a> | 
+          <a href="https://github.com/vaijaaaaa/Blankly" className="underline" target="_blank">GitHub Repo</a> | 
           <span> No tracking, ever.</span>
         </p>
       </footer>
