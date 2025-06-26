@@ -1,0 +1,21 @@
+{
+  "name": "Blankly - YouTube Focus Mode",
+  "description": "Hides YouTube's distracting recommendation sidebar.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["storage", "scripting", "tabs"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icons/icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
