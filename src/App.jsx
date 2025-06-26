@@ -23,7 +23,7 @@ export default function App() {
       <header id="home" className="pt-36 pb-20 px-6 text-center">
         <h1 className="text-6xl font-bold mb-4">Blankly</h1>
         <p className="text-xl max-w-2xl mx-auto mb-6">Watch YouTube without distractions. Hide the recommendations and stay focused with just one click.</p>
-        <a href="https://github.com/yourusername/blankly" target="_blank" className="inline-block bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition">
+        <a href="https://github.com/vaijaaaaa/Blankly" target="_blank" className="inline-block bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition">
           View on GitHub
         </a>
       </header>
