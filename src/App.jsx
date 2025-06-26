@@ -1,4 +1,3 @@
-import React from 'react';
 import { Download, Info, Home } from 'lucide-react';
 
 export default function App() {
