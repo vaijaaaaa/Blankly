@@ -1,33 +1,38 @@
-function hideSidebar() {
-  const secondary = document.querySelector('#secondary'); // right side recommendations
-  if (secondary) secondary.style.display = 'none';
+function hideElements() {
+  const sidebar = document.querySelector('#secondary');
+  const homeGrid = document.querySelector('ytd-rich-grid-renderer');
+  const guide = document.querySelector('ytd-mini-guide-renderer');
 
-  const comments = document.querySelector('ytd-comments');
-  if (comments) comments.style.marginRight = '0px';
+  if (sidebar) sidebar.style.display = 'none';
+  if (homeGrid) homeGrid.style.display = 'none';
+  if (guide) guide.style.display = 'none';
 }
 
-function showSidebar() {
-  const secondary = document.querySelector('#secondary');
-  if (secondary) secondary.style.display = '';
+function showElements() {
+  const sidebar = document.querySelector('#secondary');
+  const homeGrid = document.querySelector('ytd-rich-grid-renderer');
+  const guide = document.querySelector('ytd-mini-guide-renderer');
 
-  const comments = document.querySelector('ytd-comments');
-  if (comments) comments.style.marginRight = '';
+  if (sidebar) sidebar.style.display = '';
+  if (homeGrid) homeGrid.style.display = '';
+  if (guide) guide.style.display = '';
 }
 
 function applyState(enabled) {
-  if (enabled) hideSidebar();
-  else showSidebar();
+  if (enabled) hideElements();
+  else showElements();
 }
 
-// Apply on load
+// Load state on initial load
 chrome.storage.sync.get('enabled', (data) => {
   applyState(data.enabled);
 });
 
-// Apply again if YouTube navigates using SPA routing
+// Watch for YouTube internal routing (SPA-style)
 const observer = new MutationObserver(() => {
   chrome.storage.sync.get('enabled', (data) => {
     applyState(data.enabled);
   });
 });
+
 observer.observe(document.body, { childList: true, subtree: true });
